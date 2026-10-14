@@ -1,6 +1,6 @@
 # FMCG Global Demand Planning & Forecasting
 
-A 6-phase time-series forecasting pipeline built on 3 years of daily sales data across 15 countries and 350+ SKUs. The goal is to optimize global inventory allocation and move from reactive reporting to predictive demand management.
+A 6-phase time-series forecasting pipeline built on 3 years of daily sales data across 7 countries and 102 SKUs. The goal is to optimize global inventory allocation and move from reactive reporting to predictive demand management.
 
 ## Project phases
 
