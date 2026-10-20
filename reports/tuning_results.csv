@@ -1,0 +1,13 @@
+config,family,num_leaves,objective,trees,valid_WAPE,max_depth
+LightGBM poisson leaves=127,LightGBM,127.0,poisson,699,0.2661718938270712,
+LightGBM poisson leaves=63,LightGBM,63.0,poisson,997,0.26619465676886944,
+XGBoost count:poisson depth=8,XGBoost,,count:poisson,830,0.2662978568928928,8.0
+XGBoost count:poisson depth=6,XGBoost,,count:poisson,999,0.266555345070536,6.0
+LightGBM poisson leaves=31,LightGBM,31.0,poisson,998,0.26675843906257307,
+XGBoost count:poisson depth=10,XGBoost,,count:poisson,526,0.2668472858390116,10.0
+XGBoost reg:squarederror depth=8,XGBoost,,reg:squarederror,512,0.26692291191820344,8.0
+XGBoost reg:squarederror depth=6,XGBoost,,reg:squarederror,727,0.26709275253274367,6.0
+LightGBM regression leaves=127,LightGBM,127.0,regression,348,0.2671718159260784,
+XGBoost reg:squarederror depth=10,XGBoost,,reg:squarederror,273,0.2671864351118264,10.0
+LightGBM regression leaves=31,LightGBM,31.0,regression,971,0.26737402304503144,
+LightGBM regression leaves=63,LightGBM,63.0,regression,475,0.26740522546976025,
