@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2d07513cb40a3d8d04b0d218f4a7e8b4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2d07513cb40a3d8d04b0d218f4a7e8b4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2d07513cb40a3d8d04b0d218f4a7e8b4 = L.map(
+                "map_2d07513cb40a3d8d04b0d218f4a7e8b4",
+                {
+                    center: [47.04275, 8.699785555555556],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1a43ddb40a1b29632ee79245fbab24fd = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1a43ddb40a1b29632ee79245fbab24fd.addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            var heat_map_03efbb076880a6334705d26a98ce4d5f = L.heatLayer(
+                [[48.203289999999996, 16.35873, 43020025.97], [48.875870000000006, 2.36046, 42601612.57], [52.513185, 13.405725, 88525559.01], [45.451515, 9.199975, 64755553.49], [41.924225, 12.50941, 72437522.63], [52.36231, 4.9585, 12516149.6], [52.25287000000001, 20.99579, 42385262.52], [41.384425, 2.18421, 67739349.27], [40.41706, -3.67473, 38965417.77]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 35,
+  "blur": 25,
+}
+            );
+        
+    
+            heat_map_03efbb076880a6334705d26a98ce4d5f.addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            var circle_marker_cc4fa20e0d23c8390209255944852bf9 = L.circleMarker(
+                [48.203289999999996, 16.35873],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_cc4fa20e0d23c8390209255944852bf9.bindTooltip(
+                `<div>
+                     Vienna, Austria: 9.1% of sales, lead time std 2.01d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a723845b7ea078023fe8d9ee74230358 = L.circleMarker(
+                [48.875870000000006, 2.36046],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_a723845b7ea078023fe8d9ee74230358.bindTooltip(
+                `<div>
+                     Paris, France: 9.0% of sales, lead time std 2.02d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80b47028c6de432421051ff667168330 = L.circleMarker(
+                [52.513185, 13.405725],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_80b47028c6de432421051ff667168330.bindTooltip(
+                `<div>
+                     Berlin, Germany: 18.7% of sales, lead time std 2.01d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3fd886d6ddf3fe1eb04938558f870be = L.circleMarker(
+                [45.451515, 9.199975],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_b3fd886d6ddf3fe1eb04938558f870be.bindTooltip(
+                `<div>
+                     Milan, Italy: 13.7% of sales, lead time std 2.01d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf5710facec9dcc10b4b35c4be1e1f7a = L.circleMarker(
+                [41.924225, 12.50941],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_bf5710facec9dcc10b4b35c4be1e1f7a.bindTooltip(
+                `<div>
+                     Rome, Italy: 15.3% of sales, lead time std 2.01d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4a8360b6be5dca810ea5961043c79a4 = L.circleMarker(
+                [52.36231, 4.9585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_b4a8360b6be5dca810ea5961043c79a4.bindTooltip(
+                `<div>
+                     Amsterdam, Netherlands: 2.6% of sales, lead time std 2.03d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe89098194b4836436590089a39505c4 = L.circleMarker(
+                [52.25287000000001, 20.99579],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_fe89098194b4836436590089a39505c4.bindTooltip(
+                `<div>
+                     Warsaw, Poland: 9.0% of sales, lead time std 2.02d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09eb5e641f1a2f2e4890cc7bfba8ba3c = L.circleMarker(
+                [41.384425, 2.18421],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_09eb5e641f1a2f2e4890cc7bfba8ba3c.bindTooltip(
+                `<div>
+                     Barcelona, Spain: 14.3% of sales, lead time std 2.01d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66b99e870df1a9d848f39512d06218b5 = L.circleMarker(
+                [40.41706, -3.67473],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2d07513cb40a3d8d04b0d218f4a7e8b4);
+        
+    
+            circle_marker_66b99e870df1a9d848f39512d06218b5.bindTooltip(
+                `<div>
+                     Madrid, Spain: 8.2% of sales, lead time std 2.02d
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
