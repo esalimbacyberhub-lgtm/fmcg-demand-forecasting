@@ -12,7 +12,7 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 
 ## Project phases
 
-1. **Data prep & integrity** (`01_data_prep`): schema validation, missing values, median lead time imputation, deduplication, channel standardisation
+1. **Data prep & integrity** (`01_data_prep`): schema and integrity checks on about 1.1 million rows (data types, missing values, exact and key duplicates, category spellings, impossible values such as zero or negative sales). No missing values, duplicates or inconsistent channel names were found, so no imputation or deduplication was needed. The 3,092 zero-sales rows were kept because 82% of them are flagged stock-outs. The checked dataset is saved for later phases.
 2. **EDA & portfolio segmentation** (`02_eda_segmentation`): ABC/XYZ SKU segmentation, lead time bottleneck analysis
 3. **Promotion lift** (`03_promo_lift`): baseline demand vs promotional lift by channel, with statistical tests
 4. **Feature engineering** (`04_feature_engineering`): 31 features including lags (1, 7, 14, 30 days) and rolling statistics computed on the previous day's demand, with no chronological leakage
