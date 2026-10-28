@@ -8,7 +8,7 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 - **Recent demand drives the forecast.** SHAP attributes 68% of model importance to recent demand history, 10.6% to calendar effects and 9.6% to the active promotion.
 - **Promotions lift demand strongly, and demand is price-elastic.** For A-class products the net price elasticity is -2.54 (95% CI -2.56 to -2.52), and a 10% discount raises units by about 68%. The model implies a multiplier of about 1.6x at 10% off and about 2.0x at 30% off.
 - **Stock-outs cannot be predicted from the available data.** They affect 3.0% of store-SKU days and cut sales by about 80% (average 11.7 vs 60.7 units), but the best classifier is no better than chance (ROC-AUC 0.502, PR-AUC equal to the 3.0% base rate). A useful stock-out model would need supply-side data such as delivery failures and replenishment events.
-- **The forecast does not disadvantage Traditional Trade.** Convenience stores (the Traditional Trade proxy) are under-forecast by 2.05%, against 2.47% for Modern Trade; the 0.40 percentage point difference is not statistically detectable (95% CI -0.31 to 1.22). A simulated forecast-based allocation gives a fill-rate gap of 0.27 percentage points between channels. The result is sensitive: an extra under-forecast of roughly 1% for Traditional Trade would break a 1 percentage point fairness target, so we recommend monitoring this bias every planning cycle.
+  - ** Convenience stores (the Traditional Trade proxy, all located in the Netherlands) are under-forecastby 2.05%, against 2.47% for Modern Trade; the 0.40 percentage point difference is not statistically detectable (95% CI -0.31 to 1.22). A simulated forecast-based allocation gives a fill-rate gap of 0.27 percentage points between channels. The result is sensitive: an extra under-forecast of roughly 1% for Traditional Trade would break a 1 percentage point fairness target, so we recommend monitoring this bias every planning cycle.
 
 ## Project phases
 
@@ -40,5 +40,5 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 
 - The data appear to be simulated (7 countries, 13 stores and 102 SKUs, smaller than the brief suggests), so results may not transfer to real retail data.
 - Results come from a single test period (July to December 2023).
-- Convenience stores are only a proxy for Traditional Trade, and there are just 44 such series, so the intervals are wide.
+- Convenience stores are only a proxy for Traditional Trade. There are just 44 such series, all in the Netherlands (the only channel there), so channel and country effects cannot be separated and the intervals are wide.
 - Price elasticity and SHAP values describe associations in observational data, not causal effects.
