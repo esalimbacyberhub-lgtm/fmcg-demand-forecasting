@@ -16,7 +16,7 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 2. **EDA & portfolio segmentation** (`02_eda_segmentation`): ABC/XYZ SKU segmentation, lead time bottleneck analysis
 3. **Promotion lift** (`03_promo_lift`): baseline demand vs promotional lift by channel, with statistical tests
 4. **Feature engineering** (`04_feature_engineering`): 31 features including lags (1, 7, 14, 30 days) and rolling statistics computed on the previous day's demand, with no chronological leakage
-5. **Modelling** (`05_modeling`): gradient boosting with time-based cross-validation; LightGBM selected
+5. **Modelling** (`05_modeling`): LightGBM, XGBoost and Random Forest compared with time-based cross-validation against a 30-day rolling-mean baseline. On the July to December 2023 test set LightGBM and XGBoost are effectively tied (WAPE 0.2667 and 0.2669), Random Forest scores 0.2733 and the baseline 0.3158. LightGBM was selected and improves on the baseline by 15.5%.
 6. **Extended analysis and ethics**:
    - `06_stats_and_geo`: regional volatility, correlations, price elasticity, Mann-Whitney tests, stationarity, regional ABC, logistics
    - `07_model_requirements`: month-start/end flags, linear baseline, ten representative series, MAPE caveat, stock-out classification
