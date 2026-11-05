@@ -8,7 +8,7 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 - **Recent demand drives the forecast.** SHAP attributes 68% of model importance to recent demand history, 10.6% to calendar effects and 9.6% to the active promotion.
 - **Promotions lift demand strongly, and demand is price-elastic.** For A-class products the net price elasticity is -2.54 (95% CI -2.56 to -2.52), and a 10% discount raises units by about 68%. The model implies a multiplier of about 1.6x at 10% off and about 2.0x at 30% off.
 - **Stock-outs cannot be predicted from the available data.** They affect 3.0% of store-SKU days and cut sales by about 80% (average 11.7 vs 60.7 units), but the best classifier is no better than chance (ROC-AUC 0.502, PR-AUC equal to the 3.0% base rate). A useful stock-out model would need supply-side data such as delivery failures and replenishment events.
-  - ** Convenience stores (the Traditional Trade proxy, all located in the Netherlands) are under-forecastby 2.05%, against 2.47% for Modern Trade; the 0.40 percentage point difference is not statistically detectable (95% CI -0.31 to 1.22). A simulated forecast-based allocation gives a fill-rate gap of 0.27 percentage points between channels. The result is sensitive: an extra under-forecast of roughly 1% for Traditional Trade would break a 1 percentage point fairness target, so we recommend monitoring this bias every planning cycle.
+- **No detectable under-allocation to Traditional Trade, but the check is fragile.** Convenience stores (the Traditional Trade proxy, all located in the Netherlands) are under-forecast by 2.05%, against 2.47% for Modern Trade; the 0.40 percentage point difference is not statistically detectable (95% CI -0.31 to 1.22). A simulated forecast-based allocation gives a fill-rate gap of 0.27 percentage points between channels. The result is sensitive: an extra under-forecast of roughly 1% for Traditional Trade would break a 1 percentage point fairness target, so we recommend monitoring this bias every planning cycle.
 
 ## Project phases
 
@@ -25,7 +25,7 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 ## Repository layout
 
 - `data/`: datasets (excluded from Git because of file size)
-- `models/`: saved models (excluded from Git; created by notebook 05)
+- `models/`: saved models (excluded from Git; created by notebook 05 or `scripts/train_evaluate.py`)
 - `notebooks/`: Jupyter notebooks, one per phase, each ending with a summary of findings
 - `reports/`: result tables (CSV) and figures (`reports/figures/`)
 - `scripts/`: reusable Python scripts
@@ -35,6 +35,15 @@ A 6-phase time-series forecasting pipeline built on 3 years of daily sales data 
 1. Place the raw sales file (`fmcg_sales_3years_1M_rows.csv`, about 212 MB) in `data/`.
 2. Install the requirements: `pip install -r requirements.txt`.
 3. Run the notebooks in order, from `01` to `08`. Notebook 08 loads the model saved by notebook 05.
+
+## Scripts
+
+Script versions of the main steps, run from the project root:
+
+- `scripts/data_prep.py`: Phase 1 data integrity checks (see the docstring at the top of the file)
+- `scripts/features.py`: builds the leakage-safe feature table used for modelling (`python scripts/features.py`)
+- `scripts/train_evaluate.py`: cross-validation, tuning, final test and model saving. `--fast` uses the settings found in notebook 05 (about 15 minutes); `--skip-cv` skips cross-validation; no flag runs everything
+- `scripts/metrics.py`: shared forecast-error metric functions
 
 ## Limitations
 
